@@ -13,7 +13,10 @@ class SweetFragment : Fragment() {
     //
     // TODO: Function To send data from fields to database
     private lateinit var binding : FragmentSweetBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -21,6 +24,7 @@ class SweetFragment : Fragment() {
         ): View? {
             val view = inflater.inflate(R.layout.fragment_sweet, container, false)
             binding = FragmentSweetBinding.bind(view)
+            binding.imageView.setImageResource(R.drawable.ic_lil_gamer)
             return view
         }
 

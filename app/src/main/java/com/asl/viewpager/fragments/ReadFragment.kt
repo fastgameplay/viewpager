@@ -14,7 +14,10 @@ class ReadFragment : Fragment() {
     // TODO: Make RecyclerView of Persons
 
     private lateinit var binding: FragmentReadBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
