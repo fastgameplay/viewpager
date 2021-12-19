@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.asl.viewpager.FileHolder
 import com.asl.viewpager.R
 import com.asl.viewpager.databinding.FragmentReadBinding
+import org.json.JSONObject
 
 
 class ReadFragment : Fragment() {
@@ -25,7 +27,14 @@ class ReadFragment : Fragment() {
         ): View? {
             val view = inflater.inflate(R.layout.fragment_read, container, false)
             binding = FragmentReadBinding.bind(view)
+            binding.button2.setOnClickListener{
+                val jsonObject = JSONObject(FileHolder.readJson(requireContext(),"JSON_DATA"))
+                binding.textView2.text = jsonObject.get("FirstName").toString()
+                binding.textView4.text = jsonObject.get("LastName").toString()
+                binding.textView5.text = jsonObject.get("Email").toString()
 
+
+            }
             return view
         }
 
