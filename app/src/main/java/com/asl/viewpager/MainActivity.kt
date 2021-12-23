@@ -7,8 +7,7 @@ import com.asl.viewpager.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-// TODO: Class Person(FirstName,Lastname,Age,Email,EyeColor)
-// TODO: Check For DataBase Version
+// TODO: Clean Up This Garbage
 // TODO: fun UpdateDataBase() -> Download from Online Database.json To Local Database.json
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
