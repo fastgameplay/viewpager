@@ -1,27 +1,26 @@
-package com.asl.viewpager
+package com.asl.viewpager.abstracts
 
 import android.content.Context
-import com.google.gson.Gson
+import com.asl.viewpager.data.Person
 import com.google.gson.reflect.TypeToken
 import java.io.*
 
 class FileWriter {
     companion object{
 
-        fun writeJson(context: Context, jsonArray: String, fileName: String){
+        fun writeFile(context: Context, string: String, fileName: String){
             val file = File(context.filesDir, fileName)
             val fileWriter = FileWriter(file)
             val bufferedWriter = BufferedWriter(fileWriter)
-            bufferedWriter.write(jsonArray)
+            bufferedWriter.write(string)
             bufferedWriter.close()
         }
 
-        fun readJson(context: Context, fileName: String): List<Person>{
-            val typeToken = object : TypeToken<List<Person>>() {}.type
+        fun readFile(context: Context, fileName: String): String{
+                val typeToken = object : TypeToken<List<Person>>() {}.type
 
             val file = File(context.filesDir,fileName)
-            val fileReader = FileReader(file)
-            val bufferedReader = BufferedReader(fileReader)
+            val bufferedReader = BufferedReader(FileReader(file))
             val stringBuilder = StringBuilder()
             var line = bufferedReader.readLine()
             while(line != null){
@@ -29,8 +28,7 @@ class FileWriter {
                 line = bufferedReader.readLine()
             }
             bufferedReader.close()
-
-            return Gson().fromJson(stringBuilder.toString(), typeToken)
+            return  stringBuilder.toString()
         }
     }
 }

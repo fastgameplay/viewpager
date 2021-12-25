@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.asl.viewpager.FileWriter
-import com.asl.viewpager.Person
+import com.asl.viewpager.abstracts.FileWriter
+import com.asl.viewpager.abstracts.Json
+import com.asl.viewpager.data.Person
 import com.asl.viewpager.R
 import com.asl.viewpager.databinding.FragmentWriteBinding
-import com.google.gson.Gson
 
 
 class WriteFragment : Fragment() {
@@ -34,10 +34,11 @@ class WriteFragment : Fragment() {
                     binding.inputEmailField.text.toString(),
                     binding.inputMobileField.text.toString(),
                     binding.inputYearField.text.toString()
-                ))
+                )
+                )
 
 
-                FileWriter.writeJson(requireContext(), Gson().toJson(personHolder),"JSON_DATA")
+                FileWriter.writeFile(requireContext(), Json.toJson(personHolder),"JSON_DATA")
             }
             return view
         }

@@ -2,9 +2,8 @@ package com.asl.viewpager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.viewpager2.widget.ViewPager2
+import com.asl.viewpager.adapters.FragmentAdapter
 import com.asl.viewpager.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 // TODO: Clean Up This Garbage

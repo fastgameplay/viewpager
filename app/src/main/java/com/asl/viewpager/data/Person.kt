@@ -1,4 +1,4 @@
-package com.asl.viewpager
+package com.asl.viewpager.data
 
 data class Person(
     var firstName: String,

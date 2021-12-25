@@ -1,20 +1,22 @@
-package com.asl.viewpager
+package com.asl.viewpager.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.asl.viewpager.data.DataHolder
+import com.asl.viewpager.R
 
 class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_layout,parent,false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RecyclerAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemId.text = "${position+1})"
-        holder.itemName.text =  DataHolder.Persons[position].firstName + " " +DataHolder.Persons[position].lastName
+        holder.itemName.text =  DataHolder.Persons[position].firstName + " " + DataHolder.Persons[position].lastName
     }
 
     override fun getItemCount(): Int = DataHolder.Persons.size

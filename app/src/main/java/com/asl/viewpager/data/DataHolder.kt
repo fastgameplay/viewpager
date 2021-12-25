@@ -1,10 +1,10 @@
-package com.asl.viewpager
+package com.asl.viewpager.data
 
 object DataHolder {
     private var persons : List<Person> = listOf()
     var Persons: List<Person> = persons
         get() = persons
-
+    //todo check version according to server last version
     private var version:String = "0"
 
     fun setData(_persons:List<Person>){

@@ -1,4 +1,4 @@
-package com.asl.viewpager
+package com.asl.viewpager.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

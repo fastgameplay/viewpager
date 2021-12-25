@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.asl.viewpager.DataHolder
-import com.asl.viewpager.FileWriter
+import com.asl.viewpager.data.DataHolder
+import com.asl.viewpager.abstracts.FileWriter
 import com.asl.viewpager.R
-import com.asl.viewpager.RecyclerAdapter
+import com.asl.viewpager.abstracts.Json
+import com.asl.viewpager.adapters.RecyclerAdapter
 import com.asl.viewpager.databinding.FragmentReadBinding
 
 
@@ -39,7 +40,8 @@ class ReadFragment : Fragment() {
             binding.recyclerView.adapter = adapter
 
             binding.button2.setOnClickListener{
-                DataHolder.setData(FileWriter.readJson(requireContext(),"JSON_DATA"))
+                DataHolder.setData(
+                    Json.toObject(FileWriter.readFile(requireContext(),"JSON_DATA")))
                 binding.recyclerView.adapter = RecyclerAdapter()
 
             }
